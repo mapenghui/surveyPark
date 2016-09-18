@@ -5,6 +5,17 @@
 	id="WebApp_ID" version="3.0">  
   <display-name>lsn_surveypark001</display-name>  
   
+  <!-- 通过上下文参数配置spring文件的位置 -->
+   <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:beans.xml</param-value>
+   </context-param>
+  
+  <!-- 上下文载入器监听器，确保web服务器启动时，直接完成spring容器的初始化 -->
+  <listener>
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
   <!-- 配置struts2的过滤器 -->
   <filter>
   	<filter-name>action</filter-name>
